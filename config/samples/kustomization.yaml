@@ -1,0 +1,5 @@
+## Append samples of your project ##
+resources:
+- author_v1_book.yaml
+- author_v1_chapter.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

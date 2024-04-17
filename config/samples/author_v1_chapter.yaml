@@ -1,0 +1,12 @@
+apiVersion: author.tutorial.kubebuilder.io/v1
+kind: Chapter
+metadata:
+  labels:
+    app.kubernetes.io/name: chapter
+    app.kubernetes.io/instance: chapter-sample
+    app.kubernetes.io/part-of: uid-preconditions
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: uid-preconditions
+  name: chapter-sample
+spec:
+  # TODO(user): Add fields here

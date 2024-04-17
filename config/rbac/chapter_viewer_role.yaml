@@ -1,0 +1,27 @@
+# permissions for end users to view chapters.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: chapter-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: uid-preconditions
+    app.kubernetes.io/part-of: uid-preconditions
+    app.kubernetes.io/managed-by: kustomize
+  name: chapter-viewer-role
+rules:
+- apiGroups:
+  - author.tutorial.kubebuilder.io
+  resources:
+  - chapters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - author.tutorial.kubebuilder.io
+  resources:
+  - chapters/status
+  verbs:
+  - get
