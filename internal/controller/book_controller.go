@@ -90,7 +90,14 @@ func (r *BookReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.
 			return ctrl.Result{}, err
 		}
 
+		book.Status.Chapter = new(string)
+		*book.Status.Chapter = chapter.Name
+
 	}
+	if err := r.Client.Status().Update(ctx, &book); err != nil {
+		return ctrl.Result{}, err
+	}
+
 	return ctrl.Result{}, nil
 }
 
